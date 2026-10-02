@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Fredoka', cursive, system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #4da7ff;
+    color: #0b1f33;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    touch-action: pan-y;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  .clay-button,
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3,
+  .animate-pulse-slow,
+  .cloud-drift,
+  [data-hero-card] {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-cartoon {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Playful Clay & Cartoon Utilities */
+.clay-card {
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 16px 36px -10px rgba(14, 57, 102, 0.16),
+              0 4px 12px -2px rgba(14, 57, 102, 0.08);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clay-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px -8px rgba(14, 57, 102, 0.22),
+              0 8px 18px -3px rgba(14, 57, 102, 0.12);
+}
+
+.clay-button {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.18s ease;
+}
+
+.clay-button:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.clay-button:active {
+  transform: scale(0.97) translateY(1px);
+}
+
+/* Gentle floating animations for decorative pills */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes floatGentleAlt {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+@keyframes pulseGently {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-float-1 {
+  animation: floatGentle 4.2s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatGentleAlt 4.8s ease-in-out infinite 0.5s;
+}
+
+.animate-float-3 {
+  animation: floatGentle 5.4s ease-in-out infinite 1.2s;
+}
+
+.animate-pulse-slow {
+  animation: pulseGently 3s ease-in-out infinite;
+}
+
+/* Clouds floating background */
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(-40px);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(-40px);
+  }
+}
+
+.cloud-drift {
+  animation: cloudDriftSlow 32s ease-in-out infinite;
+}

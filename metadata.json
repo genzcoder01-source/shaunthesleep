@@ -1,0 +1,6 @@
+{
+  "name": "Shaun the Sleep - Interactive Game World",
+  "description": "An interactive scroll-driven playground featuring Shaun the Sleep with cinematic GSAP scroll animations, games, and characters.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
