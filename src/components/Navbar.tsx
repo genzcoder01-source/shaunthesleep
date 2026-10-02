@@ -37,8 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navItems = [
     { label: 'home', href: '#hero' },
     { label: 'games', href: '#games' },
-    { label: 'characters', href: '#characters' },
-    { label: 'about', href: '#about' },
     { label: 'contact', action: onOpenContact },
   ];
 

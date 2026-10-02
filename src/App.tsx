@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { ScrollScene } from './components/ScrollScene';
-import { GameSection } from './components/GameSection';
-import { CharactersSection } from './components/CharactersSection';
-import { AboutSection } from './components/AboutSection';
-import { CtaSection } from './components/CtaSection';
+import { PlaySection } from './components/PlaySection';
 import { Footer } from './components/Footer';
 import { MiniGameModal } from './components/MiniGameModal';
 import { ContactModal } from './components/ContactModal';
@@ -18,7 +15,7 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + 200;
-      const sections = ['hero', 'games', 'characters', 'about'];
+      const sections = ['hero', 'games'];
 
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -50,20 +47,12 @@ export default function App() {
       <main className="flex-1">
         <ScrollScene onPlayGameClick={() => setIsGameModalOpen(true)} />
 
-        {/* Section 1: Games */}
-        <GameSection onPlayGameClick={() => setIsGameModalOpen(true)} />
+        {/* Section 1: Image-led games introduction */}
+        <PlaySection />
 
-        {/* Section 2: Characters */}
-        <CharactersSection />
-
-        {/* Section 3: About */}
-        <AboutSection />
-
-        {/* Section 4: Call to Action */}
-        <CtaSection onPlayGameClick={() => setIsGameModalOpen(true)} />
       </main>
 
-      {/* Section 5: Footer */}
+      {/* Compact footer after the games scene */}
       <Footer
         onOpenContact={() => setIsContactModalOpen(true)}
         onPlayGameClick={() => setIsGameModalOpen(true)}
